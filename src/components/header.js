@@ -9,7 +9,7 @@ import {
   Modal,
   NavbarBrand,
 } from "react-bootstrap";
-import logo from "../images/murrayhill.png";
+import logo from "../images/Untitled-1.svg"
 import { Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 
