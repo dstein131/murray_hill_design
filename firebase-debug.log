@@ -1,0 +1,203 @@
+[debug] [2022-05-21T22:41:40.741Z] ----------------------------------------------------------------------
+[debug] [2022-05-21T22:41:40.741Z] Command:       /usr/local/bin/node /Users/davidstein/.npm-global/bin/firebase deploy
+[debug] [2022-05-21T22:41:40.742Z] CLI Version:   11.0.0
+[debug] [2022-05-21T22:41:40.742Z] Platform:      darwin
+[debug] [2022-05-21T22:41:40.742Z] Node Version:  v16.14.2
+[debug] [2022-05-21T22:41:40.742Z] Time:          Sat May 21 2022 18:41:40 GMT-0400 (Eastern Daylight Time)
+[debug] [2022-05-21T22:41:40.743Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-21T22:41:40.768Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-21T22:41:40.768Z] > authorizing via signed-in user (dstein131@gmail.com)
+[debug] [2022-05-21T22:41:40.768Z] [iam] checking project murray-hill-web-dev for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-05-21T22:41:40.769Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions [none]
+[debug] [2022-05-21T22:41:40.769Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-21T22:41:40.968Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions 200
+[debug] [2022-05-21T22:41:40.968Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-21T22:41:40.969Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev [none]
+[debug] [2022-05-21T22:41:41.241Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev 200
+[debug] [2022-05-21T22:41:41.241Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev {"projectId":"murray-hill-web-dev","projectNumber":"555391631665","displayName":"Murray Hill Web Dev","name":"projects/murray-hill-web-dev","resources":{"hostingSite":"murray-hill-web-dev","realtimeDatabaseInstance":"murray-hill-web-dev-default-rtdb"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'murray-hill-web-dev'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-05-21T22:41:41.242Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev [none]
+[debug] [2022-05-21T22:41:41.573Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev 200
+[debug] [2022-05-21T22:41:41.573Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev {"projectId":"murray-hill-web-dev","projectNumber":"555391631665","displayName":"Murray Hill Web Dev","name":"projects/murray-hill-web-dev","resources":{"hostingSite":"murray-hill-web-dev","realtimeDatabaseInstance":"murray-hill-web-dev-default-rtdb"},"state":"ACTIVE"}
+[debug] [2022-05-21T22:41:41.576Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions [none]
+[debug] [2022-05-21T22:41:41.577Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-05-21T22:41:42.577Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions 200
+[debug] [2022-05-21T22:41:42.577Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions {"name":"projects/555391631665/sites/murray-hill-web-dev/versions/86cc08c2f93c21c8","status":"CREATED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[murray-hill-web-dev]: beginning deploy... 
+[debug] [2022-05-21T22:41:42.732Z] Error: EPERM: operation not permitted, scandir '/Users/davidstein/.Trash'
+    at Object.readdirSync (node:fs:1392:3)
+    at GlobSync._readdir (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:285:46)
+    at GlobSync._readdirInGlobStar (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:242:17)
+    at GlobSync._readdir (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:273:17)
+    at GlobSync._processReaddir (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:134:22)
+    at GlobSync._process (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:129:10)
+    at GlobSync._processGlobStar (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:377:10)
+    at GlobSync._process (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:127:10)
+    at new GlobSync (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:45:10)
+    at globSync (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:23:10)
+    at listFiles (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/lib/listFiles.js:6:28)
+    at runDeploys (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/lib/deploy/hosting/deploy.js:42:49)
+    at deploy (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/lib/deploy/hosting/deploy.js:83:12)
+    at chain (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/lib/deploy/index.js:33:15)
+    at deploy (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/lib/deploy/index.js:69:11)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-05-21T22:43:13.203Z] ----------------------------------------------------------------------
+[debug] [2022-05-21T22:43:13.204Z] Command:       /usr/local/bin/node /Users/davidstein/.npm-global/bin/firebase deploy
+[debug] [2022-05-21T22:43:13.204Z] CLI Version:   11.0.0
+[debug] [2022-05-21T22:43:13.204Z] Platform:      darwin
+[debug] [2022-05-21T22:43:13.204Z] Node Version:  v16.14.2
+[debug] [2022-05-21T22:43:13.204Z] Time:          Sat May 21 2022 18:43:13 GMT-0400 (Eastern Daylight Time)
+[debug] [2022-05-21T22:43:13.205Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-21T22:43:13.230Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-21T22:43:13.230Z] > authorizing via signed-in user (dstein131@gmail.com)
+[debug] [2022-05-21T22:43:13.230Z] [iam] checking project murray-hill-web-dev for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-05-21T22:43:13.231Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions [none]
+[debug] [2022-05-21T22:43:13.231Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-21T22:43:13.458Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions 200
+[debug] [2022-05-21T22:43:13.458Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-21T22:43:13.459Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev [none]
+[debug] [2022-05-21T22:43:13.739Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev 200
+[debug] [2022-05-21T22:43:13.740Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev {"projectId":"murray-hill-web-dev","projectNumber":"555391631665","displayName":"Murray Hill Web Dev","name":"projects/murray-hill-web-dev","resources":{"hostingSite":"murray-hill-web-dev","realtimeDatabaseInstance":"murray-hill-web-dev-default-rtdb"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'murray-hill-web-dev'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-05-21T22:43:13.742Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev [none]
+[debug] [2022-05-21T22:43:13.922Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev 200
+[debug] [2022-05-21T22:43:13.922Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev {"projectId":"murray-hill-web-dev","projectNumber":"555391631665","displayName":"Murray Hill Web Dev","name":"projects/murray-hill-web-dev","resources":{"hostingSite":"murray-hill-web-dev","realtimeDatabaseInstance":"murray-hill-web-dev-default-rtdb"},"state":"ACTIVE"}
+[debug] [2022-05-21T22:43:13.923Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions [none]
+[debug] [2022-05-21T22:43:13.923Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-05-21T22:43:14.938Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions 200
+[debug] [2022-05-21T22:43:14.938Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions {"name":"projects/555391631665/sites/murray-hill-web-dev/versions/f6bf6281ff59be46","status":"CREATED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[murray-hill-web-dev]: beginning deploy... 
+[debug] [2022-05-21T22:43:15.019Z] Error: EPERM: operation not permitted, scandir '/Users/davidstein/.Trash'
+    at Object.readdirSync (node:fs:1392:3)
+    at GlobSync._readdir (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:285:46)
+    at GlobSync._readdirInGlobStar (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:242:17)
+    at GlobSync._readdir (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:273:17)
+    at GlobSync._processReaddir (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:134:22)
+    at GlobSync._process (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:129:10)
+    at GlobSync._processGlobStar (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:377:10)
+    at GlobSync._process (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:127:10)
+    at new GlobSync (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:45:10)
+    at globSync (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:23:10)
+    at listFiles (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/lib/listFiles.js:6:28)
+    at runDeploys (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/lib/deploy/hosting/deploy.js:42:49)
+    at deploy (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/lib/deploy/hosting/deploy.js:83:12)
+    at chain (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/lib/deploy/index.js:33:15)
+    at deploy (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/lib/deploy/index.js:69:11)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-05-21T22:46:25.701Z] ----------------------------------------------------------------------
+[debug] [2022-05-21T22:46:25.702Z] Command:       /usr/local/bin/node /Users/davidstein/.npm-global/bin/firebase deploy
+[debug] [2022-05-21T22:46:25.702Z] CLI Version:   11.0.0
+[debug] [2022-05-21T22:46:25.702Z] Platform:      darwin
+[debug] [2022-05-21T22:46:25.702Z] Node Version:  v16.14.2
+[debug] [2022-05-21T22:46:25.703Z] Time:          Sat May 21 2022 18:46:25 GMT-0400 (Eastern Daylight Time)
+[debug] [2022-05-21T22:46:25.703Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-21T22:46:25.729Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-21T22:46:25.729Z] > authorizing via signed-in user (dstein131@gmail.com)
+[debug] [2022-05-21T22:46:25.729Z] [iam] checking project murray-hill-web-dev for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-05-21T22:46:25.730Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions [none]
+[debug] [2022-05-21T22:46:25.730Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-21T22:46:25.972Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions 200
+[debug] [2022-05-21T22:46:25.973Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-21T22:46:25.974Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev [none]
+[debug] [2022-05-21T22:46:26.245Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev 200
+[debug] [2022-05-21T22:46:26.245Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev {"projectId":"murray-hill-web-dev","projectNumber":"555391631665","displayName":"Murray Hill Web Dev","name":"projects/murray-hill-web-dev","resources":{"hostingSite":"murray-hill-web-dev","realtimeDatabaseInstance":"murray-hill-web-dev-default-rtdb"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'murray-hill-web-dev'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-05-21T22:46:26.246Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev [none]
+[debug] [2022-05-21T22:46:26.479Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev 200
+[debug] [2022-05-21T22:46:26.480Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev {"projectId":"murray-hill-web-dev","projectNumber":"555391631665","displayName":"Murray Hill Web Dev","name":"projects/murray-hill-web-dev","resources":{"hostingSite":"murray-hill-web-dev","realtimeDatabaseInstance":"murray-hill-web-dev-default-rtdb"},"state":"ACTIVE"}
+[debug] [2022-05-21T22:46:26.483Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions [none]
+[debug] [2022-05-21T22:46:26.483Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-05-21T22:46:27.349Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions 200
+[debug] [2022-05-21T22:46:27.349Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions {"name":"projects/555391631665/sites/murray-hill-web-dev/versions/4d0b3e6d87b099e4","status":"CREATED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[murray-hill-web-dev]: beginning deploy... 
+[debug] [2022-05-21T22:46:27.493Z] Error: EPERM: operation not permitted, scandir '/Users/davidstein/.Trash'
+    at Object.readdirSync (node:fs:1392:3)
+    at GlobSync._readdir (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:285:46)
+    at GlobSync._readdirInGlobStar (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:242:17)
+    at GlobSync._readdir (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:273:17)
+    at GlobSync._processReaddir (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:134:22)
+    at GlobSync._process (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:129:10)
+    at GlobSync._processGlobStar (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:377:10)
+    at GlobSync._process (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:127:10)
+    at new GlobSync (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:45:10)
+    at globSync (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/node_modules/glob/sync.js:23:10)
+    at listFiles (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/lib/listFiles.js:6:28)
+    at runDeploys (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/lib/deploy/hosting/deploy.js:42:49)
+    at deploy (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/lib/deploy/hosting/deploy.js:83:12)
+    at chain (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/lib/deploy/index.js:33:15)
+    at deploy (/Users/davidstein/.npm-global/lib/node_modules/firebase-tools/lib/deploy/index.js:69:11)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2022-05-21T22:48:41.690Z] ----------------------------------------------------------------------
+[debug] [2022-05-21T22:48:41.691Z] Command:       /usr/local/bin/node /Users/davidstein/.npm-global/bin/firebase deploy
+[debug] [2022-05-21T22:48:41.691Z] CLI Version:   11.0.0
+[debug] [2022-05-21T22:48:41.691Z] Platform:      darwin
+[debug] [2022-05-21T22:48:41.691Z] Node Version:  v16.14.2
+[debug] [2022-05-21T22:48:41.692Z] Time:          Sat May 21 2022 18:48:41 GMT-0400 (Eastern Daylight Time)
+[debug] [2022-05-21T22:48:41.692Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-21T22:48:41.718Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-21T22:48:41.718Z] > authorizing via signed-in user (dstein131@gmail.com)
+[debug] [2022-05-21T22:48:41.718Z] [iam] checking project murray-hill-web-dev for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-05-21T22:48:41.719Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions [none]
+[debug] [2022-05-21T22:48:41.719Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-21T22:48:41.934Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions 200
+[debug] [2022-05-21T22:48:41.935Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-21T22:48:41.936Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev [none]
+[debug] [2022-05-21T22:48:42.160Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev 200
+[debug] [2022-05-21T22:48:42.160Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev {"projectId":"murray-hill-web-dev","projectNumber":"555391631665","displayName":"Murray Hill Web Dev","name":"projects/murray-hill-web-dev","resources":{"hostingSite":"murray-hill-web-dev","realtimeDatabaseInstance":"murray-hill-web-dev-default-rtdb"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'murray-hill-web-dev'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-05-21T22:48:42.162Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev [none]
+[debug] [2022-05-21T22:48:42.373Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev 200
+[debug] [2022-05-21T22:48:42.373Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev {"projectId":"murray-hill-web-dev","projectNumber":"555391631665","displayName":"Murray Hill Web Dev","name":"projects/murray-hill-web-dev","resources":{"hostingSite":"murray-hill-web-dev","realtimeDatabaseInstance":"murray-hill-web-dev-default-rtdb"},"state":"ACTIVE"}
+[debug] [2022-05-21T22:48:42.376Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions [none]
+[debug] [2022-05-21T22:48:42.376Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-05-21T22:48:43.063Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions 200
+[debug] [2022-05-21T22:52:57.766Z] ----------------------------------------------------------------------
+[debug] [2022-05-21T22:52:57.766Z] Command:       /usr/local/bin/node /Users/davidstein/.npm-global/bin/firebase deploy --only hosting
+[debug] [2022-05-21T22:52:57.767Z] CLI Version:   11.0.0
+[debug] [2022-05-21T22:52:57.767Z] Platform:      darwin
+[debug] [2022-05-21T22:52:57.767Z] Node Version:  v16.14.2
+[debug] [2022-05-21T22:52:57.767Z] Time:          Sat May 21 2022 18:52:57 GMT-0400 (Eastern Daylight Time)
+[debug] [2022-05-21T22:52:57.768Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-05-21T22:52:57.795Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-05-21T22:52:57.795Z] > authorizing via signed-in user (dstein131@gmail.com)
+[debug] [2022-05-21T22:52:57.795Z] [iam] checking project murray-hill-web-dev for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-05-21T22:52:57.796Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions [none]
+[debug] [2022-05-21T22:52:57.796Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-21T22:52:58.038Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions 200
+[debug] [2022-05-21T22:52:58.038Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/murray-hill-web-dev:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-05-21T22:52:58.039Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev [none]
+[debug] [2022-05-21T22:52:58.282Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev 200
+[debug] [2022-05-21T22:52:58.282Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev {"projectId":"murray-hill-web-dev","projectNumber":"555391631665","displayName":"Murray Hill Web Dev","name":"projects/murray-hill-web-dev","resources":{"hostingSite":"murray-hill-web-dev","realtimeDatabaseInstance":"murray-hill-web-dev-default-rtdb"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'murray-hill-web-dev'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-05-21T22:52:58.285Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev [none]
+[debug] [2022-05-21T22:52:58.519Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev 200
+[debug] [2022-05-21T22:52:58.520Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/murray-hill-web-dev {"projectId":"murray-hill-web-dev","projectNumber":"555391631665","displayName":"Murray Hill Web Dev","name":"projects/murray-hill-web-dev","resources":{"hostingSite":"murray-hill-web-dev","realtimeDatabaseInstance":"murray-hill-web-dev-default-rtdb"},"state":"ACTIVE"}
+[debug] [2022-05-21T22:52:58.523Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions [none]
+[debug] [2022-05-21T22:52:58.523Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-05-21T22:52:59.301Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/555391631665/sites/murray-hill-web-dev/versions 200
