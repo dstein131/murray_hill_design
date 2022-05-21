@@ -1,8 +1,9 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 
 function Resume() {
   return (
-    <div>Test</div>
+    <Container>Resume</Container>
   )
 }
 
