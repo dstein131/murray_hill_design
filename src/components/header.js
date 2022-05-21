@@ -1,6 +1,8 @@
 import React from 'react'
-import { Nav, Navbar, Container, NavDropdown, Image, Button, Modal} from 'react-bootstrap'
+import { Nav, Navbar, Container, NavDropdown, Image, Button, Modal, NavbarBrand} from 'react-bootstrap'
 import logo from '../images/murrayhill.png'
+import { Link } from "react-router-dom";
+import { LinkContainer } from 'react-router-bootstrap'
 
 function Header() {
     const [show, setShow] = React.useState(false);
@@ -11,17 +13,18 @@ function Header() {
 
   return (
       <>
- <Navbar  expand="lg" style={{backgroundColor:"#AA2AA5"}}>
+ <Navbar  className='shadow-sm p-3 mb-5 bg-white' expand="lg" style={{backgroundColor:"transparent",
+                                }}>
   <Container >
-      <Image fluid rounded src={logo} width={300} ></Image>
+    <Image fluid rounded src={logo} width={260} ></Image>
     {/* <Navbar.Brand href="#home">Murray Hill Design</Navbar.Brand> */}
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ms-auto ">
-        <Nav.Link href="#home"  style={{color:"#0C1829"}}>Home</Nav.Link>
-        <Nav.Link href="#link"  style={{color:"#0C1829"}}>Dev Portfolio</Nav.Link>
-        <Nav.Link href="#link"  style={{color:"#0C1829"}}>UX/UI Portfolio</Nav.Link>
-        <Nav.Link href="#link"  style={{color:"#0C1829"}}>Resume</Nav.Link>
+        <LinkContainer to="/home"><Nav.Link href=""  style={{color:"#0C1829"}}>Home</Nav.Link></LinkContainer>
+        <LinkContainer to="/devport"><Nav.Link href=""  style={{color:"#0C1829"}}>Dev Portfolio</Nav.Link></LinkContainer>
+        <LinkContainer to="/uxuiport"><Nav.Link href=""  style={{color:"#0C1829"}}>UX/UI Portfolio</Nav.Link></LinkContainer>
+        <LinkContainer to="/resume"><Nav.Link href=""  style={{color:"#0C1829"}}>Resume</Nav.Link></LinkContainer>
         {/* <Nav.Link href="#link"  style={{color:"#0C1829"}}>Contact</Nav.Link> */}
         {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
