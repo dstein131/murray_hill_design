@@ -25,6 +25,7 @@ Interaction Design and Iconography.</Card.Text>
         <Card.Text>Management of the Department of Defense’s geosynchronous satellite resources on a global scale in order to provide early warning indicators for troops in direct conflict as well as missile defense for the United States and its allies. Communicated directly with multiple federal agencies as well as its allies on a daily basis to ensure timely and relevant intelligence dissemination. Deployed to Afghanistan to support Special Operations Command in Operation Enduring Freedom as a Signals Intelligence Geospatial Analyst to aid in the targeting of known high value targets throughout Afghanistan from both signals intelligence and human intelligence gathered on the battlefield.</Card.Text>
         </Col>
         <Col>
+        <div style={{borderLeft: "1px solid gray", paddingLeft: "10px"}}>
         <Card.Title>education</Card.Title>
         <Card.Text>UX/UI Bootcamp >
         University of Denver >
@@ -52,6 +53,7 @@ Florida International University >
         <Card.Text>Army Service Ribbon</Card.Text>
         <Card.Text>Army Good Conduct Medal, (2nd Award)</Card.Text>
         <Card.Text>National Defense Service Medal</Card.Text>
+        </div>
         </Col>
         </Row>
        
