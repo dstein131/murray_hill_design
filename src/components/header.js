@@ -75,7 +75,7 @@ function Header() {
               </LinkContainer>
               <LinkContainer to="/resume">
                 <Nav.Link href="" style={{ color: "#0C1829" }}>
-                curriculum.vitae
+                  curriculum.vitae
                 </Nav.Link>
               </LinkContainer>
 
@@ -88,28 +88,51 @@ function Header() {
           <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
         </NavDropdown> */}
               <>
-                <Button variant="outline-warning" onClick={handleShow}>
-                  email
+                <Button size="sm" variant="outline-warning" onClick={handleShow}>
+                  contact
                 </Button>
 
                 <Modal show={show} onHide={handleClose}>
                   <Modal.Header closeButton>
-                    <Modal.Title>Message Murray Hill Web Dev</Modal.Title>
+                    <Modal.Title>
+                      send a message to murray.hill.web.dev
+                    </Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
                     <Form ref={form} onSubmit={sendEmail}>
                       <Form.Group>
-                      <Form.Label>Name</Form.Label>
-                      <input class="form-control" type="text" name="user_name" />
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">
+                            name
+                          </span>
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="user_name"
+                          />
+                        </div>
                       </Form.Group>
                       <Form.Group>
-                      <Form.Label>Email</Form.Label>
-                      <input class="form-control" type="email" name="user_email" />
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">
+                            e.mail
+                          </span>
+                          <input
+                            class="form-control"
+                            type="email"
+                            name="user_email"
+                            defaultValue={"required for response"}
+                          />
+                        </div>
                       </Form.Group>
                       <Form.Group>
-                      <Form.Label>Message</Form.Label>
-                      <textarea class="form-control" name="message" />
-                      {/* <input type="submit" value="Send" /> */}
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">
+                            message
+                          </span>
+                          <textarea class="form-control" name="message" />
+                          {/* <input type="submit" value="Send" /> */}
+                        </div>
                       </Form.Group>
                     </Form>
                   </Modal.Body>
