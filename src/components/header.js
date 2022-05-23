@@ -8,16 +8,42 @@ import {
   Button,
   Modal,
   NavbarBrand,
+  Form,
 } from "react-bootstrap";
-import logo from "../images/Untitled-1.svg"
+import logo from "../images/Untitled-1.svg";
 import { Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import Contact from "./contact";
 
 function Header() {
   const [show, setShow] = React.useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "murray_hill",
+        "template_wkxau5d",
+        form.current,
+        "TmisvocKlvlRffcyP"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    handleClose();
+  };
 
   return (
     <>
@@ -52,6 +78,7 @@ function Header() {
                   Resume
                 </Nav.Link>
               </LinkContainer>
+
               {/* <Nav.Link href="#link"  style={{color:"#0C1829"}}>Contact</Nav.Link> */}
               {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -70,13 +97,21 @@ function Header() {
                     <Modal.Title>Message Murray Hill Design</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
-                    Woohoo, you're reading this text in a modal!
+                    <Form ref={form} onSubmit={sendEmail}>
+                      <Form.Label>Name</Form.Label>
+                      <input class="form-control" type="text" name="user_name" />
+                      <Form.Label>Email</Form.Label>
+                      <input class="form-control" type="email" name="user_email" />
+                      <Form.Label>Message</Form.Label>
+                      <textarea class="form-control" name="message" />
+                      {/* <input type="submit" value="Send" /> */}
+                    </Form>
                   </Modal.Body>
                   <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                       Close
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
+                    <Button variant="primary" onClick={sendEmail}>
                       Send Message
                     </Button>
                   </Modal.Footer>
