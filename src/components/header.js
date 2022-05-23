@@ -60,22 +60,22 @@ function Header() {
             <Nav className="ms-auto ">
               <LinkContainer to="/home">
                 <Nav.Link href="" style={{ color: "#0C1829" }}>
-                  Home
+                  home
                 </Nav.Link>
               </LinkContainer>
               <LinkContainer to="/devport">
                 <Nav.Link href="" style={{ color: "#0C1829" }}>
-                  Front End
+                  front.end
                 </Nav.Link>
               </LinkContainer>
               <LinkContainer to="/uxuiport">
                 <Nav.Link href="" style={{ color: "#0C1829" }}>
-                  UX.UI
+                  ux.ui
                 </Nav.Link>
               </LinkContainer>
               <LinkContainer to="/resume">
                 <Nav.Link href="" style={{ color: "#0C1829" }}>
-                  Resume
+                curriculum.vitae
                 </Nav.Link>
               </LinkContainer>
 
@@ -89,22 +89,28 @@ function Header() {
         </NavDropdown> */}
               <>
                 <Button variant="outline-warning" onClick={handleShow}>
-                  Contact
+                  email
                 </Button>
 
                 <Modal show={show} onHide={handleClose}>
                   <Modal.Header closeButton>
-                    <Modal.Title>Message Murray Hill Design</Modal.Title>
+                    <Modal.Title>Message Murray Hill Web Dev</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
                     <Form ref={form} onSubmit={sendEmail}>
+                      <Form.Group>
                       <Form.Label>Name</Form.Label>
                       <input class="form-control" type="text" name="user_name" />
+                      </Form.Group>
+                      <Form.Group>
                       <Form.Label>Email</Form.Label>
                       <input class="form-control" type="email" name="user_email" />
+                      </Form.Group>
+                      <Form.Group>
                       <Form.Label>Message</Form.Label>
                       <textarea class="form-control" name="message" />
                       {/* <input type="submit" value="Send" /> */}
+                      </Form.Group>
                     </Form>
                   </Modal.Body>
                   <Modal.Footer>
