@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './header'
 import Home from './home'
 import {
@@ -9,12 +9,17 @@ import DevPort from './devPort';
 import UxUiPort from './uxuiport';
 import Resume from './resume';
 
+
+
 function Index() {
+
+  
+
   return (
     <>
-    <Header/>
+    <Header />
     <Routes>
-        <Route path="/home" element={<Home />}> </Route>
+        <Route path="/home" element={<Home  />}> </Route>
         <Route path="/devport" element={<DevPort />}> </Route>
         <Route path="/uxuiport" element={<UxUiPort />}> </Route>
         <Route path="/resume" element={<Resume />}> </Route>

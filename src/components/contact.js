@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import ConfirmEmail from './confirmEmail';
 
 function Contact() {
     const form = useRef();
@@ -10,6 +11,7 @@ function Contact() {
       emailjs.sendForm('murray_hill', 'template_wkxau5d', form.current, 'TmisvocKlvlRffcyP')
         .then((result) => {
             console.log(result.text);
+            <ConfirmEmail></ConfirmEmail>
         }, (error) => {
             console.log(error.text);
         });

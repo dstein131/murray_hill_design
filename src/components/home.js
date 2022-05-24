@@ -13,7 +13,8 @@ function Home() {
     {/* <center><div style={{width: "90vw"}}> */}
       <Row>
         <Col>
-        <Card className="text-white">
+        <LinkContainer to="/home">
+        <Card className="text-white shadow-md">
           <Card.Img src={bannerImage} alt="Card image" />
           <Card.ImgOverlay>
             {/* <Card.Title>clean</Card.Title> */}
@@ -28,13 +29,14 @@ function Home() {
     </Card.Footer> */}
           </Card.ImgOverlay>
         </Card>
+        </LinkContainer>
         </Col>
       </Row>
 
       <Row className="mt-4">
         <Col>
-        <LinkContainer to="/home">
-          <Card className="text-white">
+        <LinkContainer to="/devport">
+          <Card className="text-white shadow-md">
             <Card.Img src={webdev} alt="Card image" />
             <Card.ImgOverlay>
               {/* <Card.Title>clean</Card.Title> */}
@@ -51,7 +53,7 @@ function Home() {
         </Col>
         <Col >
         <LinkContainer to="/uxuiport">
-          <Card className="text-white">
+          <Card className="text-white shadow-md">
             <Card.Img src={ux} alt="Card image" />
             <Card.ImgOverlay>
               {/* <Card.Title>clean</Card.Title> */}

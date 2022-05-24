@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   Nav,
   Navbar,
@@ -9,6 +9,7 @@ import {
   Modal,
   NavbarBrand,
   Form,
+  Alert
 } from "react-bootstrap";
 import logo from "../images/Untitled-1.svg";
 import { Link } from "react-router-dom";
@@ -16,13 +17,23 @@ import { LinkContainer } from "react-router-bootstrap";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Contact from "./contact";
+import ConfirmEmail from "./confirmEmail";
+import { render } from "@testing-library/react";
+
+
 
 function Header() {
+  const [sendEmail1, setSendEmail1] = useState(false)
   const [show, setShow] = React.useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const form = useRef();
+
+  const [show2, setShow2] = useState(false);
+
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -37,11 +48,14 @@ function Header() {
       .then(
         (result) => {
           console.log(result.text);
+          alert("thanks for the message. i will reponse shortly")
+          
         },
         (error) => {
           console.log(error.text);
         }
       );
+     
     handleClose();
   };
 
@@ -53,7 +67,29 @@ function Header() {
         style={{ backgroundColor: "#f7f7f7" }}
       >
         <Container>
-          <Image fluid rounded src={logo} width={125}></Image>
+
+
+        <Modal show={show2} onHide={handleClose2}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose2}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose2}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+
+
+
+          <LinkContainer to="/home">
+          <Image  fluid rounded src={logo} width={125}></Image>
+          </LinkContainer>
           {/* <Navbar.Brand href="#home">Murray Hill Design</Navbar.Brand> */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -78,6 +114,9 @@ function Header() {
                   curriculum.vitae
                 </Nav.Link>
               </LinkContainer>
+              {/* {sendEmail1
+              ? <ConfirmEmail></ConfirmEmail>
+              : null } */}
 
               {/* <Nav.Link href="#link"  style={{color:"#0C1829"}}>Contact</Nav.Link> */}
               {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
