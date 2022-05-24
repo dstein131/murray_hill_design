@@ -4,7 +4,7 @@ import { Card, Container, Col, Row } from "react-bootstrap";
 function Resume() {
   return (
     <Row className="justify-content-md-center">
-      <Col lg={8} md={11} xs={12}>
+      <Col lg={6} md={11} xs={12}>
         <Container>
           <Card>
             <Card.Body>

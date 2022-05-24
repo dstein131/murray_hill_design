@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   Nav,
   Navbar,
@@ -11,7 +11,7 @@ import {
   Form,
   Alert,
   Toast,
-  ToastContainer
+  ToastContainer,
 } from "react-bootstrap";
 import logo from "../images/Untitled-1.svg";
 import { Link } from "react-router-dom";
@@ -22,10 +22,8 @@ import Contact from "./contact";
 import ConfirmEmail from "./confirmEmail";
 import { render } from "@testing-library/react";
 
-
-
 function Header() {
-  const [sendEmail1, setSendEmail1] = useState(false)
+  const [sendEmail1, setSendEmail1] = useState(false);
   const [show, setShow] = React.useState(false);
   const [showA, setShowA] = useState(true);
   const toggleShowA = () => setShowA(!showA);
@@ -41,7 +39,7 @@ function Header() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setShowA(true)
+    setShowA(true);
 
     emailjs
       .sendForm(
@@ -53,14 +51,12 @@ function Header() {
       .then(
         (result) => {
           console.log(result.text);
-          alert("thanks for the message. i will reponse shortly")
-          
         },
         (error) => {
           console.log(error.text);
         }
       );
-     
+
     handleClose();
   };
 
@@ -72,28 +68,25 @@ function Header() {
         style={{ backgroundColor: "#f7f7f7" }}
       >
         <Container>
-
-
-        <Modal show={show2} onHide={handleClose2}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose2}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose2}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-
-
-
+          <Modal show={show2} onHide={handleClose2}>
+            <Modal.Header closeButton>
+              <Modal.Title>Modal heading</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              Woohoo, you're reading this text in a modal!
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose2}>
+                Close
+              </Button>
+              <Button variant="primary" onClick={handleClose2}>
+                Save Changes
+              </Button>
+            </Modal.Footer>
+          </Modal>
 
           <LinkContainer to="/home">
-          <Image  fluid rounded src={logo} width={125}></Image>
+            <Image fluid rounded src={logo} width={125}></Image>
           </LinkContainer>
           {/* <Navbar.Brand href="#home">Murray Hill Design</Navbar.Brand> */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -119,9 +112,6 @@ function Header() {
                   curriculum.vitae
                 </Nav.Link>
               </LinkContainer>
-              
-              
-              
 
               {/* <Nav.Link href="#link"  style={{color:"#0C1829"}}>Contact</Nav.Link> */}
               {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
@@ -132,7 +122,11 @@ function Header() {
           <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
         </NavDropdown> */}
               <>
-                <Button size="sm" variant="outline-warning" onClick={handleShow}>
+                <Button
+                  size="sm"
+                  variant="outline-warning"
+                  onClick={handleShow}
+                >
                   contact
                 </Button>
 
@@ -194,20 +188,20 @@ function Header() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <ToastContainer position="top-center">
-      <Toast show={showA} onClose={toggleShowA}>
-              <Toast.Header>
-                <img
-                  src="holder.js/20x20?text=%20"
-                  className="rounded me-2"
-                  alt=""
-                />
-                <strong className="me-auto">thanks</strong>
-                <small>...just now</small>
-              </Toast.Header>
-              <Toast.Body>message sent. will repond shortly</Toast.Body>
-            </Toast>
-            </ToastContainer>
+      {/* <ToastContainer position="top-center">
+        <Toast show={showA} onClose={toggleShowA}>
+          <Toast.Header>
+            <img
+              src="holder.js/20x20?text=%20"
+              className="rounded me-2"
+              alt=""
+            />
+            <strong className="me-auto">thanks</strong>
+            <small>...just now</small>
+          </Toast.Header>
+          <Toast.Body variant="dark">message sent. will repond shortly</Toast.Body>
+        </Toast>
+      </ToastContainer> */}
     </>
   );
 }
