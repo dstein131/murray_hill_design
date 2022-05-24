@@ -9,7 +9,9 @@ import {
   Modal,
   NavbarBrand,
   Form,
-  Alert
+  Alert,
+  Toast,
+  ToastContainer
 } from "react-bootstrap";
 import logo from "../images/Untitled-1.svg";
 import { Link } from "react-router-dom";
@@ -25,6 +27,8 @@ import { render } from "@testing-library/react";
 function Header() {
   const [sendEmail1, setSendEmail1] = useState(false)
   const [show, setShow] = React.useState(false);
+  const [showA, setShowA] = useState(true);
+  const toggleShowA = () => setShowA(!showA);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -37,6 +41,7 @@ function Header() {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setShowA(true)
 
     emailjs
       .sendForm(
@@ -114,9 +119,9 @@ function Header() {
                   curriculum.vitae
                 </Nav.Link>
               </LinkContainer>
-              {/* {sendEmail1
-              ? <ConfirmEmail></ConfirmEmail>
-              : null } */}
+              
+              
+              
 
               {/* <Nav.Link href="#link"  style={{color:"#0C1829"}}>Contact</Nav.Link> */}
               {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
@@ -189,6 +194,20 @@ function Header() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <ToastContainer position="top-center">
+      <Toast show={showA} onClose={toggleShowA}>
+              <Toast.Header>
+                <img
+                  src="holder.js/20x20?text=%20"
+                  className="rounded me-2"
+                  alt=""
+                />
+                <strong className="me-auto">thanks</strong>
+                <small>...just now</small>
+              </Toast.Header>
+              <Toast.Body>message sent. will repond shortly</Toast.Body>
+            </Toast>
+            </ToastContainer>
     </>
   );
 }
