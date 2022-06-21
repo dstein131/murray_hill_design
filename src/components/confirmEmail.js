@@ -1,4 +1,6 @@
-import React, {Button, Modal, useState} from 'react'
+import React, {useState} from 'react'
+import { Button, Modal } from "react-bootstrap"
+
 
 function ConfirmEmail() {
     const [show, setShow] = useState(false);
