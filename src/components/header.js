@@ -20,7 +20,7 @@ import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Contact from "./contact";
 import ConfirmEmail from "./confirmEmail";
-import { render } from "@testing-library/react";
+i
 
 function Header() {
   const [sendEmail1, setSendEmail1] = useState(false);
