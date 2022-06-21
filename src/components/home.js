@@ -18,11 +18,11 @@ function Home() {
           <Card.Img src={bannerImage} alt="Card image" />
           <Card.ImgOverlay>
             {/* <Card.Title>clean</Card.Title> */}
-            <Card.Subtitle>minimal</Card.Subtitle>
-            <Card.Subtitle>responsive</Card.Subtitle>
-            <Card.Subtitle>user.focused</Card.Subtitle>
+            <Card.Subtitle className="mb-1" style={{ fontSize: "14px" }}>minimal</Card.Subtitle>
+            <Card.Subtitle className="mb-1" style={{ fontSize: "14px" }}>responsive</Card.Subtitle>
+            <Card.Subtitle style={{ fontSize: "14px" }}>user.focused</Card.Subtitle>
             <div class="card-img-overlay d-flex flex-column align-items-center justify-content-end">
-              <Card.Subtitle>front.end web.dev | ux.ui design</Card.Subtitle>
+              <Card.Subtitle style={{ fontSize: "14px" }}>front.end web.dev | ux.ui design</Card.Subtitle>
             </div>
             {/* <Card.Footer variant="bottom">
     Last updated 3 mins ago
@@ -40,9 +40,9 @@ function Home() {
             <Card.Img src={webdev} alt="Card image" />
             <Card.ImgOverlay>
               {/* <Card.Title>clean</Card.Title> */}
-              <Card.Subtitle>web.development</Card.Subtitle>
+              <Card.Subtitle style={{ fontSize: "14px" }}>web.development</Card.Subtitle>
               <div class="card-img-overlay d-flex flex-column align-items-center justify-content-end">
-                <Card.Subtitle>htlml.css | javascript.react</Card.Subtitle>
+                <Card.Subtitle style={{ fontSize: "14px" }}>htlml.css | javascript.react</Card.Subtitle>
               </div>
               {/* <Card.Footer variant="bottom">
             Last updated 3 mins ago
@@ -57,9 +57,9 @@ function Home() {
             <Card.Img src={ux} alt="Card image" />
             <Card.ImgOverlay>
               {/* <Card.Title>clean</Card.Title> */}
-              <Card.Subtitle>ux.ui design</Card.Subtitle>
+              <Card.Subtitle style={{ fontSize: "14px" }}>ux.ui design</Card.Subtitle>
               <div class="card-img-overlay d-flex flex-column align-items-center justify-content-end">
-                <Card.Subtitle>user.research | prototyping</Card.Subtitle>
+                <Card.Subtitle style={{ fontSize: "14px" }}>user.research | prototyping</Card.Subtitle>
               </div>
               {/* <Card.Footer variant="bottom">
             Last updated 3 mins ago

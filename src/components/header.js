@@ -93,7 +93,7 @@ function Header() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto ">
               <LinkContainer to="/home">
-                <Nav.Link href="" style={{ color: "#0C1829" }}>
+                <Nav.Link href="" style={{ color: "#0C1829" }}>   
                   home
                 </Nav.Link>
               </LinkContainer>
@@ -109,7 +109,7 @@ function Header() {
               </LinkContainer>
               <LinkContainer to="/resume">
                 <Nav.Link href="" style={{ color: "#0C1829" }}>
-                  curriculum.vitae
+                  c.v
                 </Nav.Link>
               </LinkContainer>
 
