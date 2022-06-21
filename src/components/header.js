@@ -85,14 +85,14 @@ function Header() {
             </Modal.Footer>
           </Modal>
 
-          <LinkContainer to="/home">
+          <LinkContainer to="/">
             <Image fluid rounded src={logo} width={125}></Image>
           </LinkContainer>
           {/* <Navbar.Brand href="#home">Murray Hill Design</Navbar.Brand> */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto ">
-              <LinkContainer to="/home">
+              <LinkContainer to="/">
                 <Nav.Link href="" style={{ color: "#0C1829" }}>   
                   home
                 </Nav.Link>

@@ -19,7 +19,7 @@ function Index() {
     <>
     <Header />
     <Routes>
-        <Route path="/home" element={<Home  />}> </Route>
+        <Route exact path="/" element={<Home  />}> </Route>
         <Route path="/devport" element={<DevPort />}> </Route>
         <Route path="/uxuiport" element={<UxUiPort />}> </Route>
         <Route path="/resume" element={<Resume />}> </Route>
